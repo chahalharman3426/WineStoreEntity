@@ -1,0 +1,72 @@
+﻿@page
+@using WineStoreEntity.Models
+@model ViewAllPurchaseModel
+
+
+
+<h2>View All Purchase List</h2>
+
+
+
+<p>
+    <a asp-page="NewPurchase">Buy Now</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Company Name")
+            </th>
+
+            <th>
+                @Html.DisplayName("Category")
+            </th>
+            <th>
+                @Html.DisplayName("Price")
+            </th>
+
+            <th>
+                @Html.DisplayName("Quantity")
+            </th>
+
+            <th>
+                @Html.DisplayName("Date")
+            </th>
+
+            <th>Edit | Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.purchases)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company)
+                </td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Qty)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.PurchaseDate)
+                </td>
+
+
+
+                <td>
+                    <a asp-page="./EditPurchase" asp-route-id="@item.id">Edit</a> |
+                    <a asp-page="./ViewAllPurchase" onclick="return confirm('Are you sure you want to delete this item?');" asp-page-handler="Delete" asp-route-id="@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> 

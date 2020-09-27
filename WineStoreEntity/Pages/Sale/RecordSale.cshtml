@@ -1,0 +1,68 @@
+﻿@page
+@using WineStoreEntity.Models @*namespace*@
+@model RecordSaleModel
+
+
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+
+<div class="container">
+    <h3>Add New Sale</h3>
+    <hr />
+    <br />
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Sale.Name"></label>
+                <input asp-for="Sale.Name" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Sale.Name"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Sale.Product"></label>
+                <input asp-for="Sale.Product" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Sale.Product"></span>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Sale.Qty"></label>
+                <input asp-for="Sale.Qty" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Sale.Qty"></span>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Sale.Bill"></label>
+                <input asp-for="Sale.Bill" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Sale.Bill"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Sale.BuyDate"></label>
+                <input asp-for="Sale.BuyDate" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Sale.BuyDate"></span>
+            </div>
+        </div>
+
+
+
+
+        <br />
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a class="btn btn-default" href="/ViewAllSale">Cancel</a>
+    </form>
+</div>

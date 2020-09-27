@@ -1,0 +1,67 @@
+﻿@page
+@using WineStoreEntity.Models @*namespace*@
+@model RegisterEmployeeModel
+
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+
+<div class="container">
+    <h3>Add Customer</h3>
+    <hr />
+    <br />
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="employee.Name"></label>
+                <input asp-for="employee.Name" class="form-control" />
+                <span class="alert-danger" asp-validation-for="employee.Name"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="employee.Designation"></label>
+                <input asp-for="employee.Designation" class="form-control" />
+                <span class="alert-danger" asp-validation-for="employee.Designation"></span>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="employee.Phone"></label>
+                <input asp-for="employee.Phone" class="form-control" />
+                <span class="alert-danger" asp-validation-for="employee.Phone"></span>
+            </div>
+        </div>
+
+
+ 
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="employee.Address"></label>
+                <input asp-for="employee.Address" class="form-control" />
+                <span class="alert-danger" asp-validation-for="employee.Address"></span>
+            </div>
+        </div>
+     
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="employee.Salary"></label>
+                <input asp-for="employee.Salary" class="form-control" />
+                <span class="alert-danger" asp-validation-for="employee.Salary"></span>
+            </div>
+        </div>
+
+
+
+
+        <br />
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a class="btn btn-default" href="/ViewAllMember">Cancel</a>
+    </form>
+</div>

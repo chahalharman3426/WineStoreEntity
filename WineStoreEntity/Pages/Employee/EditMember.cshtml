@@ -1,0 +1,50 @@
+﻿@page "{id:int}"
+@using WineStoreEntity.Models
+@model EditMemberModel
+
+
+<div class="container">
+    <h3>Edit Employee Details </h3>
+    <hr />
+    <br />
+    <form method="post">
+        <input asp-for="Employee.id" type="hidden" />
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Employee.Name"></label>
+                <input asp-for="Employee.Name" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Employee.Designation"></label>
+                <input asp-for="Employee.Designation" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Employee.Phone"></label>
+                <input asp-for="Employee.Phone" class="form-control" />
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Employee.Address"></label>
+                <input asp-for="Employee.Address" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Employee.Salary"></label>
+                <input asp-for="Employee.Salary" class="form-control" />
+            </div>
+        </div>
+
+        <br />
+        <input type="submit" value="Update" class="btn btn-primary" />
+        <a class="btn btn-default" href="/ViewAllMember">Cancel</a>
+    </form>
+</div>
+

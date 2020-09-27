@@ -1,0 +1,69 @@
+﻿@page
+@using WineStoreEntity.Models
+@model ViewAllMemberModel
+
+
+<h2>View All Staff Member</h2>
+
+
+
+<p>
+    <a asp-page="RegisterEmployee">Register New Employee</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Name")
+            </th>
+            <th>
+                @Html.DisplayName("Designation")
+            </th>
+            <th>
+                @Html.DisplayName("Phone")
+            </th>
+
+            <th>
+                @Html.DisplayName("Address")
+            </th>
+
+            <th>
+                @Html.DisplayName("Salary")
+            </th>
+            
+            <th>Edit | Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.EmployeeList)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+
+
+            
+            <td>
+                <a asp-page="./EditMember" asp-route-id="@item.id">Edit</a> |
+                <a asp-page="./ViewAllMember" onclick="return confirm('Are you sure you want to delete this item?');" asp-page-handler="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table> 

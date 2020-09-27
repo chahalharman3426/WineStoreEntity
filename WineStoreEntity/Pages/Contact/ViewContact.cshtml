@@ -1,0 +1,61 @@
+﻿@page
+@using WineStoreEntity.Models
+@model ViewContactModel
+
+
+
+<h2>View All Contact Details</h2>
+
+
+
+<p>
+    <a asp-page="AddContact">Add Contact</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Name")
+            </th>
+            <th>
+                @Html.DisplayName("Email")
+            </th>
+
+            <th>
+                @Html.DisplayName("Phone")
+            </th>
+           
+            <th>
+                @Html.DisplayName("Message")
+            </th>
+
+            <th>Edit | Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.contactList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Message)
+                </td>
+
+                <td>
+                    <a asp-page="./EditContact" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./ViewContact" onclick="return confirm('Are you sure you want to delete this item?');" asp-page-handler="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> 

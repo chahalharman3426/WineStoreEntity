@@ -1,0 +1,50 @@
+﻿@page "{id:int}"
+@using WineStoreEntity.Models
+@model EditSaleModel
+
+
+<div class="container">
+    <h3>Edit Sale Details </h3>
+    <hr />
+    <br />
+    <form method="post">
+        <input asp-for="sale.id" type="hidden" />
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="sale.Name"></label>
+                <input asp-for="sale.Name" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="sale.Product"></label>
+                <input asp-for="sale.Product" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="sale.Qty"></label>
+                <input asp-for="sale.Qty" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="sale.Bill"></label>
+                <input asp-for="sale.Bill" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="sale.BuyDate"></label>
+                <input asp-for="sale.BuyDate" class="form-control" />
+            </div>
+        </div>
+
+        <br />
+        <input type="submit" value="Update" class="btn btn-primary" />
+        <a class="btn btn-default" href="/ViewAllSale">Cancel</a>
+    </form>
+</div>
+
